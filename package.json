@@ -1,0 +1,24 @@
+{
+  "name": "china-university-icon",
+  "version": "1.0.0",
+  "private": true,
+  "description": "![](.github/cover.png)",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx svgo -f ./output -o assets/images"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soulteary/china-university-icon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soulteary/china-university-icon/issues"
+  },
+  "homepage": "https://github.com/soulteary/china-university-icon#readme",
+  "devDependencies": {
+    "svgo": "^3.0.2"
+  }
+}
