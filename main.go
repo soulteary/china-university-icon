@@ -7,9 +7,10 @@ import (
 	"strings"
 )
 
-func main() {
+const FLAG_USE_CIRCLE_LOGO = true
 
-	const srcDir = "./resource/logo/"
+func main() {
+	const srcDir = "./resource/logo-circle/"
 	const distDir = "./output/"
 	os.MkdirAll(distDir, os.ModePerm)
 
@@ -20,9 +21,11 @@ func main() {
 
 	for _, file := range files {
 		if !file.IsDir() && strings.HasSuffix(strings.ToLower(file.Name()), ".svg") {
-			arr := strings.Split(file.Name(), " ")[1:]
-			if len(arr) > 1 {
-				fmt.Println(file.Name(), arr)
+			fileName := strings.Split(file.Name(), ".")[0]
+			alias := strings.Split(fileName, " ")[0]
+
+			if len(alias) == 0 {
+				fmt.Println(file.Name(), fileName)
 			} else {
 				buf, err := os.ReadFile(srcDir + file.Name())
 				if err != nil {
@@ -30,7 +33,7 @@ func main() {
 					log.Fatalln(err)
 				}
 
-				fileName := strings.ToUpper(strings.Split(strings.Join(arr, ""), ".")[0]) + ".svg"
+				fileName := strings.ToUpper(alias) + ".svg"
 				if len(fileName) > 4 {
 					os.WriteFile(distDir+fileName, buf, os.ModePerm)
 				} else {
@@ -39,5 +42,4 @@ func main() {
 			}
 		}
 	}
-
 }
