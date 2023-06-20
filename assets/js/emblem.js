@@ -124,17 +124,17 @@ var Emblem = (function () {
     },
     "Soochow University": {
       name: "Soochow University",
-      alias: "Soochow",
+      alias: "SU",
       cname: "苏州大学",
     },
     "Xidian University": {
       name: "Xidian University",
-      alias: "Xidian",
+      alias: "XDU",
       cname: "西安电子科技大学",
     },
     "Westlake University": {
       name: "Westlake University",
-      alias: "Westlake",
+      alias: "WU",
       cname: "西湖大学",
     },
     "Wuhan University": {
